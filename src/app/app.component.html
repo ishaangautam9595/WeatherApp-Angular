@@ -1,0 +1,18 @@
+<div class="search">
+    <form #form (submit)="onSubmit()">
+      <input type="text" placeholder="Search city" name="city"
+      [(ngModel)]="cityName">
+    </form>
+  </div>
+  <div class="container" *ngIf="weatherData as wd">
+    <div class="upper-data">
+      <ng-template #coldWeather>
+      </ng-template>
+  
+      <p>Temperature : {{weatherData.main.temp}}</p>
+      <p>Description: {{weatherData.weather[0].description}}</p>
+      <p>Main: {{weatherData.weather[0].main}}</p>
+      <p>Wind Speed: {{weatherData.wind.speed}}</p>
+
+  
+  <router-outlet></router-outlet>
